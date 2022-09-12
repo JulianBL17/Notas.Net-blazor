@@ -1,0 +1,42 @@
+@page "/notas"
+
+<PageTitle>Notas</PageTitle>
+
+<h1>CALCULADORA DE NOTAS</h1>
+
+
+<h3>NOTA 1 </h3>
+<input type="number" placeholder="Dijite un valor" style="border:3px dotted; color:blue; " @bind="nota1">
+
+<h3>NOTA 2 </h3>
+<input type="number" placeholder="Dijite un valor" style="border:3px dotted ; color:red;" @bind="nota2">
+
+<h3>NOTA 3 </h3>
+<input type="number" placeholder="Dijite un valor" style="border:3px dotted ; color:orange;" @bind="nota3">
+<br>
+
+
+
+
+<p role="status">Nota Definitiva: @notaD </p>
+<div class="spinner-border" role="status"> </div> 
+<span>Loading...</span>
+<br>
+  
+<button class="btn btn-primary" @onclick="CalcularDefinitiva"> Calcular </button>
+
+
+@code {
+    private float nota1;
+    private float nota2;
+    private float nota3;
+    private float notaD;
+   
+
+
+    private void CalcularDefinitiva(){
+        
+        notaD=(nota1+nota2+nota3)/3;
+    
+    }
+}
